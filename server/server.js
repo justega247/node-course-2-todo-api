@@ -129,7 +129,7 @@ app.get('/users/me', authenticate, (req, res) => {
 });
 
 app.delete('/users/me/token', authenticate, (req, res) => {
-    //we have access to the user via req.user and the token of that user via (req.token) since they 
+    //we have access to the user via (req.user) and the token of that user via (req.token) since they 
     //are authenticated as you can't delete(logout) a user who is not logged in.
 
     req.user.removeToken(req.token).then(() => {
